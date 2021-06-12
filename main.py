@@ -17,7 +17,6 @@ class Arrays:
                 print("Error! Elements are more than the size of the array.")
 
     """This function returns the number of the elements in an array, excluding the None values if there are any."""
-    @property
     def my_len(self):
         length = 0
         for i in self.items:
@@ -28,7 +27,22 @@ class Arrays:
 
         return length
 
+    """This function inserts the element at the last"""
+    def insert_last(self, item):
+        if self.my_len() < self.size:
+            self.items.append(item)
+        else:
+            print("Error! Element index out of range.")
+
+    """This function inserts the element at the beginning of an array."""
+    def insert_first(self, element):
+        if self.my_len() < self.size:
+            for i in range(self.my_len(), 0, -1):
+                self.items[i] = self.items[i-1]
+            self.items[0] = element
+        else:
+            print("Error! Element index out of range.")
+
     def __str__(self):
         print(self.items)
-
 
