@@ -87,6 +87,7 @@ class Arrays:
             print(item)
 
     """This function returns the largest number in an array."""
+
     def max(self):
         largest = self.items[0]
         for item in self.items:
@@ -95,5 +96,13 @@ class Arrays:
 
         return largest
 
-
-
+    """This method reverses the array"""
+    def reverse(self):
+        first_index = 0
+        second_index = self.my_len() - 1
+        while first_index < second_index:
+            tmp = self.items[first_index]
+            self.items[first_index] = self.items[second_index]
+            self.items[second_index] = tmp
+            first_index += 1
+            second_index -= 1

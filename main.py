@@ -1,5 +1,7 @@
 import Arrays
 
-numbers = Arrays.Arrays(5, [10, 20, 40, 50, 50])
-print(numbers.max())
+numbers = Arrays.Arrays(10, [1,2,3,4,5,6,7,8,9])
+# print(numbers.max())
+numbers.reverse()
+numbers.print()
 
