@@ -17,6 +17,7 @@ class Arrays:
                 print("Error! Elements are more than the size of the array.")
 
     """This function returns the number of the elements in an array, excluding the None values if there are any."""
+
     def my_len(self):
         length = 0
         for i in self.items:
@@ -28,6 +29,7 @@ class Arrays:
         return length
 
     """This function inserts the element at the last"""
+
     def insert_last(self, item):
         if self.my_len() < self.size:
             self.items.append(item)
@@ -35,6 +37,7 @@ class Arrays:
             print("Error! Element index out of range.")
 
     """This function inserts the element at the beginning of an array."""
+
     def insert_first(self, element):
         if self.my_len() < self.size:
             for i in range(self.my_len(), 0, -1):
@@ -44,6 +47,7 @@ class Arrays:
             print("Error! Element index out of range.")
 
     """This function inserts the element at the given index in an array"""
+
     def insert_at_index(self, index, element):
         if (self.my_len()) < self.size:
             for i in range(self.my_len(), index, -1):
@@ -53,12 +57,19 @@ class Arrays:
             print("Error! Element index out of range.")
 
     """This function removes the element at the given index in an array"""
+
     def remove_at_index(self, index):
-        for i in range(index, self.my_len() - 1, 1):
-            self.items[i] = self.items[i + 1]
-        self.items[self.my_len() - 1] = None
+        if (index < 0) or (index >= self.my_len()):
+            raise ValueError(
+                "Illegal argument passed. Index cannot be negative or greater than the number of elements in an array.")
+
+        else:
+            for i in range(index, self.my_len() - 1, 1):
+                self.items[i] = self.items[i + 1]
+            self.items[self.my_len() - 1] = None
 
     """This function finds the index of the given element."""
+
     def index_of(self, element):
         for index in range(self.my_len()):
             if self.items[index] == element:
@@ -68,8 +79,10 @@ class Arrays:
         return -1
 
     """This function prints the content of the array."""
+
     def print(self):
         for item in self.items:
             if item is None:
                 continue
             print(item)
+
