@@ -62,6 +62,16 @@ class Arrays:
             self.items[i] = self.items[i + 1]
         self.items[self.my_len()-1] = None
 
+    """This function finds the index of the given element."""
+    def index_of(self, element):
+        for index in range(self.my_len()):
+            if self.items[index] == element:
+                return index
+            continue
+
+        return -1
+
+    """This function prints the content of the array."""
     def print(self):
         print(self.items)
 
