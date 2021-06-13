@@ -48,7 +48,7 @@ class Arrays:
 
     """This function inserts the element at the given index in an array"""
 
-    def insert_at_index(self, index, element):
+    def insert_at(self, index, element):
         if (self.my_len()) < self.size:
             for i in range(self.my_len(), index, -1):
                 self.items[i] = self.items[i - 1]
@@ -58,7 +58,7 @@ class Arrays:
 
     """This function removes the element at the given index in an array"""
 
-    def remove_at_index(self, index):
+    def remove_at(self, index):
         if (index < 0) or (index >= self.my_len()):
             raise ValueError(
                 "Illegal argument passed. Index cannot be negative or greater than the number of elements in an array.")
